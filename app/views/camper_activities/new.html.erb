@@ -1,0 +1,13 @@
+<h1>Camper || Activity Form</h1>
+<%= form_for @camper_activity do |f| %>
+    <%= f.label :camper %>
+    <%= f.collection_select :camper_id, Camper.all, :id, :name %><br>
+    <br>
+    <%= f.label :activity %>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name %><br>
+    <br>
+    <%= f.label :time %>
+    <%= f.number_field :time, :max => 23, :min => 0  %><br>
+    <br>
+    <%= f.submit %>
+<% end %>
